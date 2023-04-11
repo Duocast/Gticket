@@ -11,7 +11,7 @@ rule GoldenTicket_GoldenSpy_GoldenHelper_Uninstaller
         $str1 = "requestStr" nocase wide ascii
         $str2 = "nb_app_log_mutex" nocase wide ascii
         $str3 = {510F4345[0-10]50518D8DCCFE[0-20]837D1C[0-20]8D45[0-15]0F4345[0-20]505157}
-        $domain = /(www\.)?ningzhidata(\.\)?com/ nocase
+        $domain = /(?:www\.)?ningzhidata(?:\.)?com/ nocase
         $ip = /(?:49\.232\.156\.177|223\.112\.21\.2)/
 
         // GoldenHelper strings
