@@ -38,16 +38,16 @@ rule GoldenTicket_GoldenSpy_GoldenHelper_Uninstaller
         $gu_str14 = "XHN2bS5leGUgLXU" ascii
         $gu_str15 = "c3ZtbS5leGUgLXN0b3BQcm90ZWN0" ascii
 		
-		// Strings for secondary detections
-		$gs_str01 = {c78510ffffff00000000 c78514ffffff0f000000 c68500ffffff00 c78528ffffff00000000 c7852cffffff0f000000 c68518ffffff00 c78540ffffff00000000 c78544ffffff0f000000 c68530ffffff00 c645fc14 80bd04feffff00}
-		$gs_str02 = "Ryeol HTTP Client Class" ascii
-		$gs_str03 = "----RYEOL-FB3B405B7EAE495aB0C0295C54D4E096-" ascii
-		$gs_str04 = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\fwkp.exe" ascii
-		$gs_str06 = "PROTOCOL_" ascii
-		$gs_str07 = "softList" ascii
-		$gs_str08 = "excuteExe" ascii
+	// Strings for secondary detections
+	$gs_str01 = {c78510ffffff00000000 c78514ffffff0f000000 c68500ffffff00 c78528ffffff00000000 c7852cffffff0f000000 c68518ffffff00 c78540ffffff00000000 c78544ffffff0f000000 c68530ffffff00 c645fc14 80bd04feffff00}
+	$gs_str02 = "Ryeol HTTP Client Class" ascii
+	$gs_str03 = "----RYEOL-FB3B405B7EAE495aB0C0295C54D4E096-" ascii
+	$gs_str04 = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\fwkp.exe" ascii
+	$gs_str06 = "PROTOCOL_" ascii
+	$gs_str07 = "softList" ascii
+	$gs_str08 = "excuteExe" ascii
 		
-		// Strings from win_goldenspy_auto rule
+	// Strings from win_goldenspy_auto rule
         $wga_sequence_0 = { 0fb68ddffdffff 85c0 b801000000 0f44c8 8d85b0fdffff 50 8d8588feffff }
         $wga_sequence_1 = { 0f84c1010000 8b4598 b101 83f80c 7525 84c9 0f84af010000 }
         $wga_sequence_2 = { ff7304 e8???????? 83c408 85c0 0f8595000000 8bcf e8???????? }
