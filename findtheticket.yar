@@ -58,6 +58,49 @@ rule GoldenTicket_GoldenSpy_GoldenHelper_Uninstaller
         $wga_sequence_7 = { 7507 b8???????? eb39 8d858cfdffff c7858cfdffff00000000 50 8d8580fdffff }
         $wga_sequence_8 = { 2bf7 3bf0 6a00 0f47f0 8d45dc 50 }
         $wga_sequence_9 = { 8b45c4 49 8365c403 c1e802 23c8 8b4204 }
+		
+	// New IOCs
+        $ioc_domain1 = "help.tax-helper.ltd" ascii
+        $ioc_domain2 = "info.tax-assistant.info" ascii
+        $ioc_domain3 = "download.tax-helper.com" ascii
+        $ioc_domain4 = "info.tax-helper.ltd" ascii
+        $ioc_domain5 = "help.tax-assistant.com" ascii
+        $ioc_domain6 = "tip.tax-helper.ltd" ascii
+        $ioc_domain7 = "tools.tax-helper.info" ascii
+        $ioc_domain8 = "help.tax-assistant.info" ascii
+        $ioc_domain9 = "bbs.tax-helper.info" ascii
+        $ioc_domain10 = "update.tax-helper.com" ascii
+        $ioc_domain11 = "info.tax-assistant.com" ascii
+        $ioc_domain12 = "update.tax-helper.ltd" ascii
+        $ioc_domain13 = "ningzhidata.com" ascii
+
+        $ioc_ip1 = "42.56.76.93" ascii
+        $ioc_ip2 = "110.18.246.13" ascii
+        $ioc_ip3 = "223.112.21.2" ascii
+        $ioc_ip4 = "3.3.1.2" ascii
+        $ioc_ip5 = "124.152.41.85" ascii
+        $ioc_ip6 = "49.232.159.177" ascii
+        $ioc_ip7 = "172.46.16.23" ascii
+        $ioc_ip8 = "2.2.1.2" ascii
+        $ioc_ip9 = "59.83.204.14" ascii
+        $ioc_ip10 = "159.89.176.244" ascii
+        $ioc_ip11 = "192.168.176.1" ascii
+        $ioc_ip12 = "1.3.1.8" ascii
+
+        $ioc_file1 = "Wmiasssrv.dll" ascii
+        $ioc_file2 = "mshkos014.dat" ascii
+        $ioc_file3 = "Skpc.dll" ascii
+        $ioc_file4 = "SVMV1.0-20200310.exe" ascii
+        $ioc_file5 = "kp.exe" ascii
+        $ioc_file6 = "IDG-FEILONGV1.0-20200310.exe" ascii
+        $ioc_file7 = "svm.exe" ascii
+        $ioc_file8 = "svminstall.exe" ascii
+        $ioc_file9 = "usv.exe" ascii
+        $ioc_file10 = "dga.exe" ascii
+        $ioc_file11 = "MPlugin.exe" ascii
+        $ioc_file12 = "BWXT.exe" ascii
+        $ioc_file13 = "AWX.exe" ascii
+        $ioc_file14 = "idgclient.exe" ascii
 
     condition:
         (uint16(0) == 0x5A4D) and (
@@ -71,5 +114,7 @@ rule GoldenTicket_GoldenSpy_GoldenHelper_Uninstaller
             (5 of ($gs_str*)) or
             // win_goldenspy_auto condition
             (7 of ($wga_sequence*) and filesize < 1081344)
+	    // New IOCs
+            (1 of ($ioc_domain*) or 1 of ($ioc_ip*) or 1 of ($ioc_file*))
         )
 }
