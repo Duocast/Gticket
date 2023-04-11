@@ -37,14 +37,23 @@ rule GoldenTicket_GoldenSpy_GoldenHelper_Uninstaller
         $gu_str13 = "U29mdHdhcmVcTWljcm9zb2Z0XFdpbmRvd3NcQ3VycmVudFZlcnNpb25cQXBwIFBhdGhzXHN2bS5leGU" ascii
         $gu_str14 = "XHN2bS5leGUgLXU" ascii
         $gu_str15 = "c3ZtbS5leGUgLXN0b3BQcm90ZWN0" ascii
+		$gs_str01 = {c78510ffffff00000000 c78514ffffff0f000000 c68500ffffff00 c78528ffffff00000000 c7852cffffff0f000000 c68518ffffff00 c78540ffffff00000000 c78544ffffff0f000000 c68530ffffff00 c645fc14 80bd04feffff00}
+		$gs_str02 = "Ryeol HTTP Client Class" ascii
+		$gs_str03 = "----RYEOL-FB3B405B7EAE495aB0C0295C54D4E096-" ascii
+		$gs_str04 = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\fwkp.exe" ascii
+		$gs_str06 = "PROTOCOL_" ascii
+		$gs_str07 = "softList" ascii
+		$gs_str08 = "excuteExe" ascii
 
     condition:
-        (uint16(0) == 0x5A4D) and (
-            // Golden Ticket/GoldenSpy condition
-            ($reg and 2 of ($str* or $domain or $ip)) or
-            // GoldenHelper condition
-            (4 of ($gh_str*)) or
-            // Goldenspy_Uninstaller_v2 condition
-            (4 of ($gu_str*))
-        )
+		(uint16(0) == 0x5A4D) and (
+			// Golden Ticket/GoldenSpy condition
+			($reg and 2 of ($str* or $domain or $ip)) or
+			// GoldenHelper condition
+			(4 of ($gh_str*)) or
+			// Goldenspy_Uninstaller_v2 condition
+			(4 of ($gu_str*)) or
+			// Goldenspy condition
+			(5 of ($gs_str*))
+		)
 }
