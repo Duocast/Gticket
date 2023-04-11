@@ -38,16 +38,16 @@ rule GoldenTicket_GoldenSpy_GoldenHelper_Uninstaller
         $gu_str14 = "XHN2bS5leGUgLXU" ascii
         $gu_str15 = "c3ZtbS5leGUgLXN0b3BQcm90ZWN0" ascii
 		
-	// Strings for secondary detections
-	$gs_str01 = {c78510ffffff00000000 c78514ffffff0f000000 c68500ffffff00 c78528ffffff00000000 c7852cffffff0f000000 c68518ffffff00 c78540ffffff00000000 c78544ffffff0f000000 c68530ffffff00 c645fc14 80bd04feffff00}
-	$gs_str02 = "Ryeol HTTP Client Class" ascii
-	$gs_str03 = "----RYEOL-FB3B405B7EAE495aB0C0295C54D4E096-" ascii
-	$gs_str04 = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\fwkp.exe" ascii
-	$gs_str06 = "PROTOCOL_" ascii
-	$gs_str07 = "softList" ascii
-	$gs_str08 = "excuteExe" ascii
+		// Strings for secondary detections
+		$gs_str01 = {c78510ffffff00000000 c78514ffffff0f000000 c68500ffffff00 c78528ffffff00000000 c7852cffffff0f000000 c68518ffffff00 c78540ffffff00000000 c78544ffffff0f000000 c68530ffffff00 c645fc14 80bd04feffff00}
+		$gs_str02 = "Ryeol HTTP Client Class" ascii
+		$gs_str03 = "----RYEOL-FB3B405B7EAE495aB0C0295C54D4E096-" ascii
+		$gs_str04 = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\fwkp.exe" ascii
+		$gs_str06 = "PROTOCOL_" ascii
+		$gs_str07 = "softList" ascii
+		$gs_str08 = "excuteExe" ascii
 		
-	// Strings from win_goldenspy_auto rule
+		// Strings from win_goldenspy_auto rule
         $wga_sequence_0 = { 0fb68ddffdffff 85c0 b801000000 0f44c8 8d85b0fdffff 50 8d8588feffff }
         $wga_sequence_1 = { 0f84c1010000 8b4598 b101 83f80c 7525 84c9 0f84af010000 }
         $wga_sequence_2 = { ff7304 e8???????? 83c408 85c0 0f8595000000 8bcf e8???????? }
@@ -59,7 +59,7 @@ rule GoldenTicket_GoldenSpy_GoldenHelper_Uninstaller
         $wga_sequence_8 = { 2bf7 3bf0 6a00 0f47f0 8d45dc 50 }
         $wga_sequence_9 = { 8b45c4 49 8365c403 c1e802 23c8 8b4204 }
 		
-	// New IOCs
+		// New IOCs
         $ioc_domain1 = "help.tax-helper.ltd" ascii
         $ioc_domain2 = "info.tax-assistant.info" ascii
         $ioc_domain3 = "download.tax-helper.com" ascii
@@ -77,15 +77,10 @@ rule GoldenTicket_GoldenSpy_GoldenHelper_Uninstaller
         $ioc_ip1 = "42.56.76.93" ascii
         $ioc_ip2 = "110.18.246.13" ascii
         $ioc_ip3 = "223.112.21.2" ascii
-        $ioc_ip4 = "3.3.1.2" ascii
-        $ioc_ip5 = "124.152.41.85" ascii
-        $ioc_ip6 = "49.232.159.177" ascii
-        $ioc_ip7 = "172.46.16.23" ascii
-        $ioc_ip8 = "2.2.1.2" ascii
-        $ioc_ip9 = "59.83.204.14" ascii
-        $ioc_ip10 = "159.89.176.244" ascii
-        $ioc_ip11 = "192.168.176.1" ascii
-        $ioc_ip12 = "1.3.1.8" ascii
+        $ioc_ip4 = "124.152.41.85" ascii
+        $ioc_ip5 = "49.232.159.177" ascii
+        $ioc_ip6 = "59.83.204.14" ascii
+        $ioc_ip7 = "159.89.176.244" ascii
 
         $ioc_file1 = "Wmiasssrv.dll" ascii
         $ioc_file2 = "mshkos014.dat" ascii
@@ -114,7 +109,7 @@ rule GoldenTicket_GoldenSpy_GoldenHelper_Uninstaller
             (5 of ($gs_str*)) or
             // win_goldenspy_auto condition
             (7 of ($wga_sequence*) and filesize < 1081344)
-	    // New IOCs
+			// New IOCs
             (1 of ($ioc_domain*) or 1 of ($ioc_ip*) or 1 of ($ioc_file*))
         )
 }
