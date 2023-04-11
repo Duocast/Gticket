@@ -133,5 +133,5 @@ def scan_directory(path):
                 print(f"Error scanning file {file_path}: {e}")
 
 if __name__ == '__main__':
-    directory_to_scan = '/path/to/scan'
+    directory_to_scan = 'C:\\'
     scan_directory(directory_to_scan)
