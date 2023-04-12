@@ -109,7 +109,7 @@ rule GoldenTicket_GoldenSpy_GoldenHelper_Uninstaller
             (5 of ($gs_str*)) or
             // win_goldenspy_auto condition
             (7 of ($wga_sequence*) and filesize < 1081344)
-			// New IOCs
+	    // New IOCs
             (1 of ($ioc_domain*) or 1 of ($ioc_ip*) or 1 of ($ioc_file*))
         )
 }
